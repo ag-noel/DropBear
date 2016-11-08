@@ -62,5 +62,12 @@ namespace UnityStandardAssets.Cameras
             // and update the gameobject itself
             transform.localRotation = m_OriginalRotation*Quaternion.Euler(-m_FollowAngles.x, m_FollowAngles.y, 0);
         }
+
+        public float yOffset = 0.4f;
+
+        void LateUpdate()
+        {
+            this.transform.position = new Vector3(0.0f, Target.transform.position.y + yOffset, 0.0f);
+        }
     }
 }
